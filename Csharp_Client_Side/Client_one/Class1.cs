@@ -13,5 +13,9 @@ namespace Client_one
 
     }
 
+        public void main2()
+        {
+
+        }
     }
 }
