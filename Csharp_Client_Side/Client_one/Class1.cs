@@ -8,14 +8,22 @@ namespace Client_one
 {
     public class Class1
     {
-    public void main()
-    {
+        public void main()
+        {
 
-    }
+        }
 
+
+
+        public void main1()
+        {
+
+<<<<<<< HEAD
         public void main2()
         {
 
+=======
+>>>>>>> origin/master
         }
     }
 }
