@@ -18,12 +18,11 @@ namespace Client_one
         public void main1()
         {
 
-<<<<<<< HEAD
+        }
         public void main2()
         {
 
-=======
->>>>>>> origin/master
+
         }
     }
 }
