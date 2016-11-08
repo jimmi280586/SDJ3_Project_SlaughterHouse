@@ -1,5 +1,7 @@
 package tier2.hostRMI;
 
-public interface ITier1 {
+import java.rmi.Remote;
+
+public interface ITier1 extends Remote{
 
 }

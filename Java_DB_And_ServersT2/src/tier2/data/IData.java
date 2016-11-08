@@ -1,5 +1,7 @@
 package tier2.data;
 
-public interface IData {
+import java.io.Serializable;
+
+public interface IData extends Serializable {
 
 }

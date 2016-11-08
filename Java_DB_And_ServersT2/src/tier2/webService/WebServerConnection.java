@@ -1,5 +1,7 @@
 package tier2.webService;
 
-public class WebServerConnection {
+import tier2.hostRMI.ITier1;
+
+public class WebServerConnection implements ITier1 {
 
 }
