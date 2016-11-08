@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Client_one;
+using System.Runtime.Serialization.Formatters.Soap;
 
-namespace Client_one
+namespace ConsoleApplication1
 {
-    public class Class1
+    class Program
     {
         static void Main(string[] args)
         {
