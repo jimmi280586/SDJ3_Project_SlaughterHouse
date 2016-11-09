@@ -12,8 +12,8 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            IJSimpCalcWebService web = new IJSimpCalcWebService();
-            Console.Write(web.addition());
+            IWebservice web = new IWebservice();
+            Console.Write(web.testing());
             Console.ReadKey();
         }
     }

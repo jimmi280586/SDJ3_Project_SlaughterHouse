@@ -1,4 +1,4 @@
-package tier2.webService;
+package webservice;
 
 import tier2.hostRMI.ITier1;
 
