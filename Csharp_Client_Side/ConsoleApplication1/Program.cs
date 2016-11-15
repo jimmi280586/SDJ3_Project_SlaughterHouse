@@ -13,6 +13,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             IWebservice web = new IWebservice();
+            
             Console.Write(web.testing());
             Console.ReadKey();
         }

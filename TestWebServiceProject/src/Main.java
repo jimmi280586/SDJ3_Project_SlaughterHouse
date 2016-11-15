@@ -13,7 +13,7 @@ public class Main {
 		IJSimpCalcWebServiceStub stub = new IJSimpCalcWebServiceStub(URL);
 		IJSimpCalcWebServiceStub.Addition par = new IJSimpCalcWebServiceStub.Addition();
 		IJSimpCalcWebServiceStub.AdditionResponse res = stub.addition(par);
-
+		
 		System.out.println( "Received: " + res.get_return() );
 	}
 

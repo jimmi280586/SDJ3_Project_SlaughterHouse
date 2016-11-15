@@ -737,6 +737,39 @@ public class IJSimpCalcWebServiceStub extends org.apache.axis2.client.Stub {
                 "addition", "ns1");
 
         /**
+         * field for Args0
+         */
+        protected java.lang.String localArgs0;
+
+        /*  This tracker boolean wil be used to detect whether the user called the set method
+         *   for this attribute. It will be used to determine whether to include this field
+         *   in the serialized XML
+         */
+        protected boolean localArgs0Tracker = false;
+
+        public boolean isArgs0Specified() {
+            return localArgs0Tracker;
+        }
+
+        /**
+         * Auto generated getter method
+         * @return java.lang.String
+         */
+        public java.lang.String getArgs0() {
+            return localArgs0;
+        }
+
+        /**
+         * Auto generated setter method
+         * @param param Args0
+         */
+        public void setArgs0(java.lang.String param) {
+            localArgs0Tracker = true;
+
+            this.localArgs0 = param;
+        }
+
+        /**
          *
          * @param parentQName
          * @param factory
@@ -783,6 +816,22 @@ public class IJSimpCalcWebServiceStub extends org.apache.axis2.client.Stub {
                         "http://www.w3.org/2001/XMLSchema-instance", "type",
                         "addition", xmlWriter);
                 }
+            }
+
+            if (localArgs0Tracker) {
+                namespace = "http://webservice";
+                writeStartElement(null, namespace, "args0", xmlWriter);
+
+                if (localArgs0 == null) {
+                    // write the nil attribute
+                    writeAttribute("xsi",
+                        "http://www.w3.org/2001/XMLSchema-instance", "nil",
+                        "1", xmlWriter);
+                } else {
+                    xmlWriter.writeCharacters(localArgs0);
+                }
+
+                xmlWriter.writeEndElement();
             }
 
             xmlWriter.writeEndElement();
@@ -1059,6 +1108,33 @@ public class IJSimpCalcWebServiceStub extends org.apache.axis2.client.Stub {
                     java.util.Vector handledAttributes = new java.util.Vector();
 
                     reader.next();
+
+                    while (!reader.isStartElement() && !reader.isEndElement())
+                        reader.next();
+
+                    if ((reader.isStartElement() &&
+                            new javax.xml.namespace.QName("http://webservice",
+                                "args0").equals(reader.getName())) ||
+                            new javax.xml.namespace.QName("", "args0").equals(
+                                reader.getName())) {
+                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                                "nil");
+
+                        if (!"true".equals(nillableValue) &&
+                                !"1".equals(nillableValue)) {
+                            java.lang.String content = reader.getElementText();
+
+                            object.setArgs0(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(
+                                    content));
+                        } else {
+                            reader.getElementText(); // throw away text nodes if any.
+                        }
+
+                        reader.next();
+                    } // End of if for expected property start element
+
+                    else {
+                    }
 
                     while (!reader.isStartElement() && !reader.isEndElement())
                         reader.next();

@@ -6,6 +6,9 @@
  */
 package webservice.skeleton;
 
+import webservice.Addition;
+import webservice.AdditionResponse;
+
 /**
  *  IJSimpCalcWebServiceSkeleton java skeleton for the axisService
  */
@@ -18,10 +21,13 @@ public class IJSimpCalcWebServiceSkeleton
      * @return additionResponse1
      */
     public webservice.AdditionResponse addition(webservice.Addition addition0) {
-    	
     	webservice.AdditionResponse res = new webservice.AdditionResponse();
-    
-    	res.set_return("web service working!");
+        
+    	res.set_return(addition0 + ": web service working!");
+    	System.out.println("printing to java");
     	return res;
     }
-}
+
+	
+	}
+
