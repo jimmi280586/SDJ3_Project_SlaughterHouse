@@ -23,8 +23,8 @@ public class IJSimpCalcWebServiceSkeleton
     public webservice.AdditionResponse addition(webservice.Addition addition0) {
     	webservice.AdditionResponse res = new webservice.AdditionResponse();
         
-    	res.set_return(addition0 + ": web service working!");
-    	System.out.println("printing to java");
+    	res.set_return(": web service working!");//this will be shown in c#
+    	System.out.println("printing to java" + addition0.getArgs0());//this will be in the server side cmd promt
     	return res;
     }
 

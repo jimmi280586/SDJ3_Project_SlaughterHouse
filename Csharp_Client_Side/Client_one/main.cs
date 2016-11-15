@@ -11,7 +11,7 @@ namespace Client_one
         static void Main(string[] args)
         {
             IJSimpCalcWebService web = new IJSimpCalcWebService();
-            Console.Write(web.addition());
+            Console.Write(web.addition("testing"));
             Console.ReadKey();
         }
     }
