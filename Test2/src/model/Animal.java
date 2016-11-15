@@ -1,40 +1,42 @@
 package model;
 
-public class Animal 
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Animal implements Serializable
 {
-	private int id;
-	private String type;
-	private int waight;
+	private float weight;
+	private int animalId;
+	public String type;
 	
-	public Animal(int id, String type, int waight)
+	public Animal() {
+		this(0, 0, "?");
+	}
+	
+	public Animal (float weight, int animalId, String type)
 	{
-		this.id = id;
+		this.weight = weight;
+		this.animalId = animalId;
 		this.type = type;
-		this.waight = waight;
-		
 	}
 
-	public int getId() {
-		return id;
+	public float getWeight() 
+	{
+		return weight;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public int getAnimalId()
+	{
+		return animalId;
 	}
 
-	public String getType() {
+	public String getType()
+	{
 		return type;
 	}
+	
+	
+	
+	
 
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public int getWaight() {
-		return waight;
-	}
-
-	public void setWaight(int waight) {
-		this.waight = waight;
-	}
 }

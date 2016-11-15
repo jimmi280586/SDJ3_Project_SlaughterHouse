@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 using Client_one;
 using System.Runtime.Serialization.Formatters.Soap;
 
+
 namespace ConsoleApplication1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            IJSimpCalcWebService web = new IJSimpCalcWebService();
-            Console.Write(web.addition("testing"));
-            Console.ReadKey();
+            Animal a = new Animal(1, "cow", 200);
+            ITest web = new ITest();
+            web.send(a);
+           
         }
     }
 }
