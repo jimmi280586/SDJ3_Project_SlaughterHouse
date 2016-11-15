@@ -91,6 +91,7 @@ public partial class ITest : System.Web.Services.Protocols.SoapHttpClientProtoco
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://model/xsd")]
+
 public partial class Animal {
     
     private int idField;
