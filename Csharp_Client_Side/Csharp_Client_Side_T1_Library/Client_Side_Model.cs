@@ -8,5 +8,6 @@ namespace Csharp_Client_Side_T1_Library
 {
     class Client_Side_Model
     {
+
     }
 }
