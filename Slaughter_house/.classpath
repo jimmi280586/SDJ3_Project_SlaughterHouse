@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="K:/jar_files/axis2-1.7.3/lib/activation-1.1.jar"/>
 	<classpathentry kind="lib" path="K:/jar_files/axis2-1.7.3/lib/antlr-2.7.7.jar"/>
 	<classpathentry kind="lib" path="K:/jar_files/axis2-1.7.3/lib/apache-mime4j-core-0.7.2.jar"/>
@@ -76,5 +76,6 @@
 	<classpathentry kind="lib" path="K:/jar_files/axis2-1.7.3/lib/xmlbeans-2.5.0.jar"/>
 	<classpathentry kind="lib" path="K:/jar_files/axis2-1.7.3/lib/xml-resolver-1.2.jar"/>
 	<classpathentry kind="lib" path="K:/jar_files/axis2-1.7.3/lib/xmlschema-core-2.2.1.jar"/>
+	<classpathentry kind="lib" path="K:/jar_files/mysql-connector-java-5.1.23-bin.jar.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
