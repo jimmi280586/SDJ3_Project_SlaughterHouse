@@ -6,6 +6,8 @@
  */
 package java_t2.service.skeleton;
 
+import java.rmi.RemoteException;
+
 /**
  *  IServerSaughterHouseSkeletonInterface java skeleton interface for the axisService
  */
@@ -22,8 +24,9 @@ public interface IServerSaughterHouseSkeletonInterface {
      * Auto generated method signature
      *
      * @param addAnimal
+     * @throws RemoteException 
      */
-    public void addAnimal(java_t2.service.AddAnimal addAnimal);
+    public void addAnimal(java_t2.service.AddAnimal addAnimal) throws RemoteException;
 
     /**
      * Auto generated method signature

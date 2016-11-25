@@ -6,12 +6,23 @@
  */
 package java_t2.service.skeleton;
 
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+
+import java_t2.Data.*;
+import java_t3.Server.IServer;
+import java_t3.Server.ServerRMIDB;
+
 /**
  *  IServerSaughterHouseSkeleton java skeleton for the axisService
  */
 public class IServerSaughterHouseSkeleton
     implements IServerSaughterHouseSkeletonInterface {
-    /**
+    public IServerSaughterHouseSkeleton()throws RemoteException
+    {}
+	IServer db = new ServerRMIDB();
+	
+	/**
      * Auto generated method signature
      *
      * @param recallPack0
@@ -29,9 +40,11 @@ public class IServerSaughterHouseSkeleton
      *
      * @param addAnimal2
      * @return
+     * @throws RemoteException 
      */
-    public void addAnimal(java_t2.service.AddAnimal addAnimal2) {
-        //TODO : fill this with the necessary business logic
+    public void addAnimal(java_t2.service.AddAnimal addAnimal2) throws RemoteException {
+        Animal tmp = new Animal(addAnimal2.getArgs0(), addAnimal2.getArgs1(), (float) addAnimal2.getArgs2());
+        db.saveAnimal(tmp);
     }
 
     /**
@@ -74,7 +87,18 @@ public class IServerSaughterHouseSkeleton
      * @return
      */
     public void addPart(java_t2.service.AddPart addPart7) {
-        //TODO : fill this with the necessary business logic
+    	ArrayList<String> list = new ArrayList<String>();
+    	String a = addPart7.getArgs3();
+    	String b = "";
+    	for(int i = 0; i<a.length(); i++)
+    	{    		
+    		if(a.charAt(i) == '/')
+    		{
+    			list.add(b);
+    		}
+    		b += a.charAt(i);
+    	}
+        Tray tmp = new Tray(addPart7.getArgs0(), addPart7.getArgs1(), (float) addPart7.getArgs2(), list);
     }
 
     /**
