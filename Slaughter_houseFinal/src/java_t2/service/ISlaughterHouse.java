@@ -6,9 +6,9 @@ import java_t2.Data.Tray;
 
 public interface ISlaughterHouse {
 
-	public int putInPackage(String trayId, String orderId);
+	//public int putInPackage(String trayId, String orderId);
 
-	public int putInTray(String trayId, String partId);
+	//public int putInTray(String trayId, String partId);
 
 	public String addAnimal(String id, String type, float weight);
 
@@ -20,7 +20,7 @@ public interface ISlaughterHouse {
 
 	public String getTray(String trayId);
 
-	public double getCurrentWeight(String trayId);
+	public String getCurrentWeight(String trayId);
 
 }
 
