@@ -20,7 +20,7 @@ public class RMIslaughterhouse
 
 	
 	private String name; // slaughter house name
-	private static ISlaughterHouse slaughterhouse;
+	private static RMIslaughterhouse slaughterhouse;
 	private IServer sendObject;
 
 	public RMIslaughterhouse(String name) throws RemoteException, NotBoundException, MalformedURLException
@@ -35,7 +35,7 @@ public class RMIslaughterhouse
 	}
 
 
-	public static ISlaughterHouse getInstance() throws RemoteException, MalformedURLException, NotBoundException
+	public static RMIslaughterhouse getInstance() throws RemoteException, MalformedURLException, NotBoundException
 	{
 		if (slaughterhouse == null) {
 			slaughterhouse = new RMIslaughterhouse("SDJ3 Slaughter ");
@@ -75,10 +75,10 @@ public class RMIslaughterhouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#addAnimal(java.lang.String, float)
 	 */
-	public String addAnimal( String type, float weight) 
+	public String addAnimal(String id, String type, float weight) 
 	{
 
-		Animal animal = new Animal(type, weight);
+		Animal animal = new Animal(id, type, weight);
 
 		try {
 			sendObject.saveAnimal(animal);
@@ -116,11 +116,11 @@ public class RMIslaughterhouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#newTray(java.lang.String, float)
 	 */
-	public String newTray(String type, float maxWeight) 
+	public String newTray(String id, String type, float maxWeight, ArrayList<String> list) 
 	
 	{
 		
-		Tray tray = new Tray(type, type, maxWeight, null);
+		Tray tray = new Tray(id, type, maxWeight, list);
 
 		
 		try {

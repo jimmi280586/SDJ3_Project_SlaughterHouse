@@ -6,11 +6,31 @@
  */
 package java_t2.service.skeleton;
 
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+
+import org.apache.xalan.lib.Extensions;
+
+import java_t2.Data.Tray;
+import java_t2.RMIhost.RMIslaughterhouse;
+import java_t2.service.AddAnimalResponse;
+import java_t2.service.GetCurrentWeightResponse;
+import java_t2.service.GetTrayResponse;
+import java_t2.service.NewOrderResponse;
+import java_t2.service.NewPartResponse;
+import java_t2.service.NewTrayResponse;
+
 /**
  *  ISlaughterHouseSkeleton java skeleton for the axisService
  */
 public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface {
-    /**
+	public ISlaughterHouseSkeleton()throws RemoteException, NotBoundException, MalformedURLException
+	{}
+    private RMIslaughterhouse rmi = new RMIslaughterhouse("SDJ3 Slaughter ");
+	
+	/**
      * Auto generated method signature
      *
      * @param addAnimal0
@@ -18,9 +38,10 @@ public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface
      */
     public java_t2.service.AddAnimalResponse addAnimal(
         java_t2.service.AddAnimal addAnimal0) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#addAnimal");
+        rmi.addAnimal(addAnimal0.getArgs0(), addAnimal0.getArgs1(), addAnimal0.getArgs2());
+		AddAnimalResponse res = new AddAnimalResponse();
+		res.set_return("animal added");
+		return res;
     }
 
     /**
@@ -31,9 +52,24 @@ public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface
      */
     public java_t2.service.NewTrayResponse newTray(
         java_t2.service.NewTray newTray2) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#newTray");
+    	//caluculate the list her
+    	ArrayList<String> tmp = new ArrayList<String>();
+    	String a = newTray2.getArgs3();
+    	String b = "";
+    	for (int i = 0; i < a.length(); i++) 
+    	{
+			if(a.charAt(i) == '/')
+			{
+				tmp.add(b);
+				b = "";
+			}
+			b += a.charAt(i); 
+		} 
+    	
+       rmi.newTray(newTray2.getArgs0(), newTray2.getArgs1(), newTray2.getArgs2(), tmp);
+       NewTrayResponse res = new NewTrayResponse();
+       res.set_return("tray added ");
+       return res;
     }
 
     /**
@@ -44,9 +80,10 @@ public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface
      */
     public java_t2.service.GetTrayResponse getTray(
         java_t2.service.GetTray getTray4) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#getTray");
+        GetTrayResponse res = new GetTrayResponse();
+        Tray a = rmi.getTray(getTray4.getArgs0());
+        res.set_return(a.toString());
+        return res;
     }
 
     /**
@@ -57,9 +94,10 @@ public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface
      */
     public java_t2.service.NewPartResponse newPart(
         java_t2.service.NewPart newPart6) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#newPart");
+        rmi.newPart(newPart6.getArgs0(), newPart6.getArgs1(), newPart6.getArgs2(), newPart6.getArgs3());
+        NewPartResponse res = new NewPartResponse();
+        res.set_return("part added ");
+        return res;
     }
 
     /**
@@ -70,9 +108,10 @@ public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface
      */
     public java_t2.service.GetCurrentWeightResponse getCurrentWeight(
         java_t2.service.GetCurrentWeight getCurrentWeight8) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#getCurrentWeight");
+       double a = rmi.getCurrentWeight(getCurrentWeight8.getArgs0());
+       GetCurrentWeightResponse res = new GetCurrentWeightResponse();
+       res.set_return("" + a);
+       return res;
     }
 
     /**
@@ -83,8 +122,9 @@ public class ISlaughterHouseSkeleton implements ISlaughterHouseSkeletonInterface
      */
     public java_t2.service.NewOrderResponse newOrder(
         java_t2.service.NewOrder newOrder10) {
-        //TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " +
-            this.getClass().getName() + "#newOrder");
+        rmi.newOrder(newOrder10.getArgs0(), newOrder10.getArgs1(), newOrder10.getArgs2());
+        NewOrderResponse res = new NewOrderResponse();
+        res.set_return("order added ");
+        return res;
     }
 }
