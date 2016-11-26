@@ -476,7 +476,7 @@ public class AdapterDatabase2 implements IAdapterDatabase
         	 
          while (rs.next())
          {
-            Part temp = new Part(rs.getString("animalID"), rs.getString("type"),rs.getFloat("weight"));
+            Part temp = new Part(rs.getString("animalID"), rs.getString("type"),reg, rs.getFloat("weight"));
             temp.setPartID(rs.getString("reg"));
 
             return temp;
@@ -502,7 +502,7 @@ public class AdapterDatabase2 implements IAdapterDatabase
 
          while (rs.next())
          {
-            Order temp = new Order(rs.getFloat("weight"),
+            Order temp = new Order(reg, rs.getFloat("weight"),
                   rs.getString("type"));
             temp.setOrderID(reg);
 

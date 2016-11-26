@@ -22,7 +22,7 @@ public class Test {
 		connection = db.openDatabase();
 	
 		//Animal animal = new Animal("pig",198720);
-		Part part = new Part("12892","legs",40);
+		Part part = new Part("12892","legs",null, 40);
 		
 		//server.saveAnimal(animal);
 	//	db.storageAnimal(animal);
