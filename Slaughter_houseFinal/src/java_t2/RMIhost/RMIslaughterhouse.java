@@ -14,7 +14,7 @@ import java_t3.Server.*;
 import java_t2.Data.Part;
 import java_t2.service.ISlaughterHouse;
 
-public class RMIslaughterhouse implements ISlaughterHouse
+public class RMIslaughterhouse 
 
 {
 
@@ -49,7 +49,6 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#putInPackage(java.lang.String, java.lang.String)
 	 */
-	@Override
 	public int putInPackage(String trayId, String orderId) 
 	{
 		try {
@@ -63,7 +62,6 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#putInTray(java.lang.String, java.lang.String)
 	 */
-	@Override
 	public int putInTray(String trayId, String partId)
 	{
 		try {
@@ -77,7 +75,6 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#addAnimal(java.lang.String, float)
 	 */
-	@Override
 	public String addAnimal( String type, float weight) 
 	{
 
@@ -98,11 +95,10 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#newPart(java.lang.String, java.lang.String, float)
 	 */
-	@Override
-	public String newPart(String animalId, String type, float weight) 
+	public String newPart(String animalId, String partid, String type, float weight) 
 	{
 		
-		Part part =new Part(animalId, type, type, weight);
+		Part part =new Part(animalId, partid, type, weight);
 
 		
 		try {
@@ -120,7 +116,6 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#newTray(java.lang.String, float)
 	 */
-	@Override
 	public String newTray(String type, float maxWeight) 
 	
 	{
@@ -143,12 +138,11 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#newOrder(java.lang.String, float)
 	 */
-	@Override
-	public String newOrder(String type, float weight) 
+	public String newOrder(String id, String type, float weight) 
 	
 	{
 		
-		Order newOrder = new Order(type, weight, type);
+		Order newOrder = new Order(id, weight, type);
 
 		
 		try {
@@ -165,7 +159,7 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#infectedMeat(java.lang.String)
 	 */
-	@Override
+	
 	public ArrayList<String> infectedMeat(String orderId) {
 		try {
 			return sendObject.getComplains(orderId);
@@ -181,7 +175,7 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#getTray(java.lang.String)
 	 */
-	@Override
+	
 	public Tray getTray(String trayId) {
 		try {
 			return sendObject.getTray(trayId);
@@ -205,7 +199,7 @@ public class RMIslaughterhouse implements ISlaughterHouse
 	/* (non-Javadoc)
 	 * @see java_t2.RMIhost.ISlaughterHouse#getCurrentWeight(java.lang.String)
 	 */
-	@Override
+	
 	public double getCurrentWeight(String trayId) {
 		try {
 			return sendObject.getTray(trayId).getCurrentWeight();

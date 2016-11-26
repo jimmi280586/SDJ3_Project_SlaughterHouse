@@ -15,7 +15,7 @@ public class Order implements Serializable {
 	private String type;
 	private int numberOfParts;
 
-	public Order(float weight, String type) {
+	public Order(String orderID, float weight, String type) {
 		this.type = type;
 		this.weight = weight;
 		numberOfParts = 0;

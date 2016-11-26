@@ -18,7 +18,7 @@ public class Part extends Animal  implements Serializable
 	   
 
       
-	   public Part(String animalId, String type, float weight)
+	   public Part(String animalId, String type, String partID, float weight)
 	   {
 		 super(animalId, type , weight);
 	    
